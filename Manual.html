@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+	<title>Manual</title>
+<head>
+	<meta charset="UTF-8">
+	<title>as</title>
+<style>
+#referance{
+	display: none;
+}
+
+#top{
+	display: none;
+	position: fixed;
+	bottom: 30px;
+	right: 30px;
+	cursor: pointer;
+	padding: 15px;
+	border: none;
+	z-index: 99;
+}
+
+#indexButton{
+	padding: 15px;
+	border: none;
+	top: 100px;
+	right: 0px;
+	opacity:0.5;
+	z-index: 99;
+	position: fixed;
+}
+#indexButton:hover{
+	opacity:1;
+}
+#index{
+	list-style-type: none;
+	padding: 15px;
+	border: none;
+	top: 100px;
+	right: 0px;
+	z-index: 99;
+	position: fixed;
+}
+#indexList{
+	display:none;
+	background-color: white;
+}
+a:visited{
+	color: blue;
+}
+</style>
+</head>
+<body>
+	<!-- Index -->
+	<ul ID="index">
+		<li><button TYPE="button" ID="indexButton" onClick="showIndex();">Index</button></li>
+	<script>
+		var showInd = (typeof ch == "undefined")? 1 : ch;
+		function showIndex(){
+			var show = document.getElementById("indexList");
+			if(showInd==1){
+				show.style.display = "block";
+			}else{
+				show.style.display = "none";
+			}
+			showInd = !showInd;
+		}
+	</script>
+		<ul ID="indexList">
+			<li><a href="#SC">Screen Clipper</a></li>
+			<li><a href="#HSD">Hide, Show, and Destroy image</a></li>
+			<li><a href="#OI">Open Image</a></li>
+			<li><a href="#CTC">Copy to clipboard</a></li>
+			<li><a href="#CFTOF">Copy file to opened folder</a></li>
+			<li><a href="#OH">Other hotkeys</a></li>
+		</ul>
+	</ul>
+	<!--Go to top button-->
+	<button TYPE="button" ID="top" onClick="goTop();">Top</button>
+	<script>
+		window.onscroll = function(){scrollFunction()};
+		function scrollFunction(){
+			if(document.body.scrollTop > 20 || document.documentElement.scrollTop > 20){
+				var top = document.getElementById("top");
+				top.style.display = "block";
+			}else{
+				var top = document.getElementById("top");
+				top.style.display = "none";
+			}
+		}
+		function goTop(){
+			document.body.scrollTop = 0;
+			document.documentElement.scrollTop = 0;
+		}
+	</script>
+	<h1>Screen Clipper Tool</h1>
+	<hr />
+	<p id="cover">
+	<img src='gif/Function.gif' height='380'/>
+	</p>
+	<br />
+
+	<!--button script-->
+<input TYPE="button" VALUE="Referance" onClick="checkSwitch();"/>
+	<script>
+		var ch = (typeof ch == "undefined")? 1 : ch;
+		function checkSwitch(){
+			if(ch == 1){
+				referanceOpen();
+			}else{
+				referanceClose();
+			}
+			ch = !ch;
+		}
+		function referanceOpen(){
+			var button = document.getElementById("referance");
+			var coverPicture = document.getElementById("cover");
+			console.log(coverPicture);
+			button.style.display = "block";
+			coverPicture.style.cssFloat = "right";
+		}
+		function referanceClose(){
+			var button = document.getElementById("referance");
+			var coverPicture = document.getElementById("cover");
+			button.style.display = "none";
+			coverPicture.style.cssFloat = "none";
+		}
+	</script>
+
+<div id="referance">
+---------------------------------------------------
+<br />
+	Modified by: Lin Sheng Jie
+<br />
+	Date of Started: December 17th, 2019
+<br />
+	Date of last edit: April 9th, 2020
+<br />
+---------------------------------------------------
+<br />
+	-Written By: Hellbent
+<br />
+	-Date Started: Dec 6th, 2019
+<br />
+	-Name: Screen Clipper.
+<h4>URL</h4>
+<ul>
+	<li><a href="https://pastebin.com/QHXiYFJM">PASTEBIN</a></li>
+</ul>
+
+---------------------------------------------------
+<br />
+	-Name: Image Copy To Clipboard
+<br />
+<h4>Referance</h4>
+<ul>
+	<li><a href="https://autohotkey.com/board/topic/29449-gdi-standard-library-145-by-tic/">AutoHotkey Community</a></li>
+	<li><a href="https://www.dropbox.com/s/0e9gdfetbfa8v0o/Gdip_All.ahk">Dropbox Gdip_All.ahk</a></li>
+</ul>
+---------------------------------------------------
+</div>
+
+<br />
+	</p>
+	<h2>Hotkeys & Funtions</h2>
+	<p>
+	<b ID="SC">Screen Clipper</b>
+	<hr>
+	Hotkey:<br />&nbsp Tab + LAlt
+	<br />
+	Function: <br />&nbsp Opening function
+	<br />
+	<img src='gif/open.gif' height='200' alt='open' />
+	<br />
+	<b>Click and drag to set  capture area.</b>
+	<br />
+	If you want to cancel. Click "Rbutton".
+	<br />
+	<img src='gif/click.gif' height='200' alt='click' />
+	<br />
+	It will save image to clip folder.
+	<br />
+	<img src='gif/save.gif' height='200' />
+	</p>
+	<br />
+	<p>
+	<b ID="HSD">Hide, Show, and Destroy image</b>
+	<hr>
+	Hotkey:<br />&nbsp Tab + WheelDown
+	<br />
+	Function:<br />&nbsp Hide image
+	<br />
+	<br />
+	Hotkey:<br />&nbsp Tab + WheelUp
+	<br />
+	Function:<br />&nbsp Show image
+	<br />
+	<br />
+	Hotkey:<br />&nbsp Tab + MButton
+	<br />
+	Function:<br />&nbsp Destroy image
+	<br />
+	<br />
+	<img src='gif/shd.gif' height='300' />
+	</p>
+	<br />
+	<p>
+	<b ID="OI">Open Image (Two types)</b>
+	<hr>
+	<b>Type 1</b><br />
+	Hotkey:<br />&nbsp Tab + Space
+	<br />
+	Function:<br />&nbsp Open Image
+	<br />
+	Hide, Show, and Destroy with Capslock + "WheelDown, WheelUp, and Mbutton".
+	<br />
+	<img src='gif/tab.gif' height='300'/>
+	<br />
+	<br />
+	<b>Type 2</b>
+	<br />
+	Hotkey:<br />&nbsp LShift + Space
+	<br />
+	Function:<br />&nbsp Open Image
+	<br />
+	Hide, Show, and Destroy with LShift + "WheelDown, WheelUp, and Mbutton".
+	<br />
+	<img src='gif/shift.gif' height='300' />
+	</p>
+	<br />
+	<b ID="CTC">Copy to clipboard</b>
+	<br />
+	Notice: If it doesn't work.
+	<br />Make sure that placing English path and name of folder can not contain space charactors.
+	<hr>
+	When you clip some screen, it will copy the last one to clipboard.
+	<br />
+	<img src='gif/copy.gif' height='300' />
+	<br />
+	<br />
+	<b ID="CFTOF">Copy file to opened folder</b>
+	<hr />
+	Hotkey:<br />&nbsp Alt + v
+	<br />
+	Function:<br />&nbsp Copy Image to opened folder
+	<br />
+	<img src='gif/copyfile.gif' height='300' />
+	<br />
+	<br />
+	<br />
+	<b ID="OH">Other hotkeys</b>
+	<hr />
+	<br />
+	Hotkey:<br />&nbsp Shift + F10
+	<br />
+	Function:<br />&nbsp Suspend
+	<br />
+	<br />
+	Hotkey:<br />&nbsp Shift + F11
+	<br />
+	Function:<br />&nbsp Send clip image to Recycle bin
+	<br />
+	<br />
+	Hotkey:<br />&nbsp Shift + F12
+	<br />
+	Function:<br />&nbsp open clip folder
+	<br />
+	
+
+</body>
+</html>
