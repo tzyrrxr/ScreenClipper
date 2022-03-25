@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<title>as</title>
 <style>
-#referance{
+#reference{
 	display: none;
 }
 
@@ -101,33 +101,33 @@ a:visited{
 	<br />
 
 	<!--button script-->
-<input TYPE="button" VALUE="Referance" onClick="checkSwitch();"/>
+<input TYPE="button" VALUE="Reference" onClick="checkSwitch();"/>
 	<script>
 		var ch = (typeof ch == "undefined")? 1 : ch;
 		function checkSwitch(){
 			if(ch == 1){
-				referanceOpen();
+				referenceOpen();
 			}else{
-				referanceClose();
+				referenceClose();
 			}
 			ch = !ch;
 		}
-		function referanceOpen(){
-			var button = document.getElementById("referance");
+		function referenceOpen(){
+			var button = document.getElementById("reference");
 			var coverPicture = document.getElementById("cover");
 			console.log(coverPicture);
 			button.style.display = "block";
 			coverPicture.style.cssFloat = "right";
 		}
-		function referanceClose(){
-			var button = document.getElementById("referance");
+		function referenceClose(){
+			var button = document.getElementById("reference");
 			var coverPicture = document.getElementById("cover");
 			button.style.display = "none";
 			coverPicture.style.cssFloat = "none";
 		}
 	</script>
 
-<div id="referance">
+<div id="reference">
 ---------------------------------------------------
 <br />
 	Modified by: Lin Sheng Jie
@@ -152,7 +152,7 @@ a:visited{
 <br />
 	-Name: Image Copy To Clipboard
 <br />
-<h4>Referance</h4>
+<h4>Reference</h4>
 <ul>
 	<li><a href="https://autohotkey.com/board/topic/29449-gdi-standard-library-145-by-tic/">AutoHotkey Community</a></li>
 	<li><a href="https://www.dropbox.com/s/0e9gdfetbfa8v0o/Gdip_All.ahk">Dropbox Gdip_All.ahk</a></li>
